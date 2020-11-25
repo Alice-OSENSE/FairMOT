@@ -100,7 +100,7 @@ def test_det(
         height = origin_shape[0]
         inp_height = img_size[1]
         inp_width = img_size[0]
-        c = np.array([width / 2., height / 2.], dtype=np.float32)
+        c = np.array([float(width) / 2., float(height) / 2.], dtype=np.float32)
         s = max(float(inp_width) / float(inp_height) * height, width) * 1.0
         meta = {'c': c, 's': s,
                 'out_height': inp_height // opt.down_ratio,

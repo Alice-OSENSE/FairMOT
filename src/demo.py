@@ -19,7 +19,7 @@ import datasets.dataset.jde as datasets
 from track import eval_seq
 
 
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 
 
 def demo(opt):
@@ -36,7 +36,7 @@ def demo(opt):
         eval_seq(opt, dataloader, 'mot', result_filename,
                  save_dir=frame_dir, show_image=False, frame_rate=frame_rate)
     except Exception as e:
-        logger.info(e)
+        logger.exception(e)
 
     if opt.output_format == 'video':
         output_video_path = osp.join(result_root, 'result.mp4')

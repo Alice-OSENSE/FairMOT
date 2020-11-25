@@ -1,0 +1,1 @@
+sudo python3 ../gen_labels_20.py

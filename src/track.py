@@ -236,5 +236,5 @@ if __name__ == '__main__':
          seqs=seqs,
          exp_name='MOT15_val_all_dla34',
          show_image=False,
-         save_images=False,
-         save_videos=False)
+         save_images=True,
+         save_videos=True)
