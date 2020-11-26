@@ -14,7 +14,7 @@ import datasets.dataset.jde as datasets
 from track import eval_seq
 
 
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 
 
 def demo(opt):
