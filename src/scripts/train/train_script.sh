@@ -3,8 +3,7 @@ python3 ../../train.py mot \
 --load_model '/home/osense-office/Desktop/model_last.pth' \
 --data_cfg '../../lib/cfg/data_basketball.json' \
 --reid_dim 256 \
---gpus '0' \
+--gpus '0,1' \
 --batch_size 4 \
---resume \
---save_dir '/home/osense-office/Desktop/' \
+--save_dir '' \
 --lr 1e-5
