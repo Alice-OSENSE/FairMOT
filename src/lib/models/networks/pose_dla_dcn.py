@@ -2,7 +2,6 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import os
 import math
 import logging
 import numpy as np
@@ -20,6 +19,12 @@ logger = logging.getLogger(__name__)
 
 def get_model_url(data='imagenet', name='dla34', hash='ba72cf86'):
     return join('http://dl.yf.io/dla/models', data, '{}-{}.pth'.format(name, hash))
+
+def get_model_url_on_windows(data='imagenet', name='dla34', hash='ba72cf86'):
+    url_components = ['http://dl.yf.io/dla/models']
+    url_components.append(data)
+    url_components.append('{}-{}.pth'.format(name, hash))
+    return "/".join(url_components)
 
 
 def conv3x3(in_planes, out_planes, stride=1):
@@ -296,7 +301,8 @@ class DLA(nn.Module):
         if name.endswith('.pth'):
             model_weights = torch.load(data + name)
         else:
-            model_url = get_model_url(data, name, hash)
+            # model_url = get_model_url(data, name, hash)
+            model_url = get_model_url_on_windows(data, name, hash)
             model_weights = model_zoo.load_url(model_url)
         num_classes = len(model_weights[list(model_weights.keys())[-1]])
         self.fc = nn.Conv2d(

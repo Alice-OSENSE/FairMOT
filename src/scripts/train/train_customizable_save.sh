@@ -1,4 +1,4 @@
-python ../../train.py mot \
+python ../../train_customize_save_test.py mot \
 --exp_id mix_dla34_reid \
 --load_model 'Users\chengyu\Desktop\Alice\weights' \
 --data_cfg '../../lib/cfg/data_basketball.json' \
@@ -6,4 +6,4 @@ python ../../train.py mot \
 --gpus '0,1' \
 --batch_size 4 \
 --save_dir 'Users\chengyu\Desktop\Alice\exp' \
---lr 1e-5
+--lr 3e-5

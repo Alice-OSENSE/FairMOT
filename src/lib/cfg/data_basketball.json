@@ -1,5 +1,5 @@
 {
-    "root":"/home/osense-office/Documents/dataset/MOT",
+    "root":"/Users/chengyu/Documents/datasets/FairMOT_dataset",
     "train":
     {
         "caltech":"../../data/caltech.all",
